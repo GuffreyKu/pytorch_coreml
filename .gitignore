@@ -1,6 +1,9 @@
 # data
 /data/bird_data
 /test/MNIST
+
+#log
+lightning_logs
 # key
 /key
 # jupyter notebook
