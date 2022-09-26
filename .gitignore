@@ -1,7 +1,7 @@
 # data
 /data/bird_data
 /test/MNIST
-
+best_model
 #log
 lightning_logs
 # key
