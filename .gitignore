@@ -1,0 +1,14 @@
+# data
+/data/bird_data
+/test/MNIST
+# key
+/key
+# jupyter notebook
+.ipynb_checkpoints/
+
+# ide
+**/__pycache__/
+.vscode/
+
+# MacOS
+.DS_Store
