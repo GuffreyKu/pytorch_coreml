@@ -8,7 +8,7 @@ from py_utils.data_module import DataModule
 from py_utils.module import Model
 
 device = torch.device('mps' if torch.backends.mps.is_available() else "cpu")
-epochs = 3
+epochs = 1
 
 if __name__ == '__main__':
 
@@ -17,7 +17,6 @@ if __name__ == '__main__':
     for path in data_paths:
         if not os.path.exists(path):
             os.mkdir(path)
-
 
     data_df = pd.read_csv('data/bird_data/birds.csv')
 
@@ -39,5 +38,3 @@ if __name__ == '__main__':
     )
 
     trainer.fit(model, data)
-    # torch.save(model.state_dict(), "bird_resnet18.pkl")
-    

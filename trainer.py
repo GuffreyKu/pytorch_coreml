@@ -10,7 +10,7 @@ import torch.nn.functional as F
 import pandas as pd
 
 from basic_model.basic import CNNBlock, Fullyconnect
-from py_dataset.image_dataset import ImageDataset
+from py_utils.image_dataset import ImageDataset
 
 device = torch.device('mps' if torch.backends.mps.is_available() else "cpu")
 epochs = 50
@@ -49,7 +49,6 @@ if __name__ == '__main__':
     data_df = pd.read_csv('data/bird_data/birds.csv')
 
     trainDataset = ImageDataset(data_df, 'train')
-    # testDataset = ImageDataset(data_df, 'test')
     validDataset = ImageDataset(data_df, 'valid')
 
     dataLoaderTrain = torch.utils.data.DataLoader(trainDataset,
@@ -64,13 +63,7 @@ if __name__ == '__main__':
                                                   num_workers=0,
                                                   drop_last=True)
 
-    # dataLoadeTest = torch.utils.data.DataLoader(testDataset,
-    #                                             batch_size=64,
-    #                                             shuffle=True,
-    #                                             num_workers=0,
-    #                                             drop_last=True)
-
-    net = Architecture(numclass=399).to(device)
+    net = Architecture(numclass=400).to(device)
     optimizer = torch.optim.Adam(net.parameters(), lr=0.0001)
     ceLoss = ce_loss().to(device)
 
@@ -94,8 +87,3 @@ if __name__ == '__main__':
                 loss = ceLoss(output, label)
                 val_loss.append(loss.to('cpu'))
         print('val loss', np.mean(val_loss))
-
-        # for image, label in dataLoadeTest:
-        #     print(image.shape)
-        #     print(label)
-        #     break
