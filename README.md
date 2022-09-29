@@ -15,7 +15,7 @@ python tool :
 
 how to training : 
 1. download dataset : https://www.notion.so/https-www-kaggle-com-datasets-gpiosenka-100-bird-species-8b505698405c48c9ad7ab73a705742a3
-2. creat "data" folder and put in bird data.
+2. create "data" folder and put in bird data.
 3. python trainer_lightning.py
 
 how to convert model
