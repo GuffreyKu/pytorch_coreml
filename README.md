@@ -1,3 +1,6 @@
+
+https://laser-cast-dec.notion.site/Pytorch_lightning-CoreML-d7d673aeb4a64a5ba49d8df9fc1e2894
+
 Environment:
 1. Install Xcode : xcode-select --install
 2. Install Homebrew : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
